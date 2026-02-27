@@ -1,0 +1,398 @@
+/* --- STRUCTURE GLOBALE --- */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- SIDEBAR (PANEL GAUCHE) --- */
+
+/* Sidebar - Etat fermé par défaut */
+.side-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-right: 1px solid #1a252f;
+  
+  /* C'est ici que la magie opère */
+  transform: translateX(-100%); 
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar - Etat ouvert */
+.side-panel.open {
+  transform: translateX(0);
+}
+
+/* Ajustement de la zone principale pour ne pas être cachée par le bouton */
+.main-content {
+  flex: 1;
+  padding: 40px 40px 40px 80px; /* Plus de marge à gauche pour le burger */
+  background: #f4f7f6;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Overlay (fond sombre) quand le menu est ouvert */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 600px) {
+  .side-panel {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+  .side-panel.open { transform: translateX(0); }
+
+  .main-content {
+    padding: 20px;
+    padding-top: 75px; /* Laisse de la place pour le burger flottant */
+  }
+  
+  .editable-title {
+    font-size: 1.2rem;
+  }
+  
+  .counter-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur petit mobile */
+    gap: 15px;
+  }
+}
+
+.side-actions { padding: 80px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+
+/* Style des boutons dans la sidebar (Import/Export/Group) */
+.side-actions button, .btn-import {
+  background: #34495e;
+  color: white;
+  border: none;
+  padding: 10px; 
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.side-actions button:hover, .btn-import:hover {
+  background: #455d75;
+  transform: translateY(-1px);
+}
+
+.btn-add-group { 
+  background: #27ae60 !important; 
+  font-weight: bold; 
+}
+.btn-add-group:hover { background: #2ecc71 !important; }
+
+/* Alignement spécifique pour les boutons de la sidebar */
+.side-actions button, .btn-import, .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espace entre l'icône et le texte */
+}
+
+/* Navigation des groupes */
+.group-nav { flex: 1; overflow-y: auto; padding: 10px; }
+
+.group-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #34495e;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.group-nav-item:hover { background: #48627d; }
+.group-nav-item.active { background: #3498db; /*border-left: 4px solid white;*/ }
+
+.nav-name { flex: 1; margin: 0 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.nav-ops button { 
+  background: none; border: none; color: white; cursor: pointer; opacity: 0.6; 
+  font-size: 1.1rem;
+}
+.nav-ops button:hover { opacity: 1; }
+
+.nav-ops button .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+/* --- ZONE PRINCIPALE (CONTENU) --- */
+.main-content { flex: 1; padding: 40px; background: #f4f7f6; overflow-y: auto; overflow-x: hidden; padding-top: 50px;}
+
+.content-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  /*border-bottom: 1px solid #ddd;*/
+  /* Empêche le chevauchement sur mobile */
+  position: relative; 
+}
+
+.editable-title {
+  flex: 1; /* Le titre prend tout l'espace disponible */
+  font-size: 1.5rem; /* Réduit pour mobile */
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: #2c3e50;
+  min-width: 0; /* Important pour que l'input puisse rétrécir en flex */
+  text-overflow: ellipsis; /* Ajoute "..." si le titre est trop long */
+}
+
+/* Bouton principal "Ajouter un compteur" */
+.btn-primary {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Le bouton d'ajout version icône seule */
+.btn-add-icon {
+  background: #3498db;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Cercle parfait */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* Empêche le bouton de s'écraser */
+}
+
+.btn-add-icon:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+.btn-add-icon .material-symbols-outlined {
+  font-size: 24px;
+}
+
+/* Grille de compteurs */
+.counter-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px; 
+}
+
+.counter-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.counter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%; /* S'assure de rester dans la carte */
+}
+
+.counter-top input {
+  flex: 1; /* L'input prend tout l'espace libre */
+  min-width: 0; /* CRITIQUE : permet à l'input de rétrécir sur mobile */
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #34495e;
+  background: transparent;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.counter-top input:focus {
+  border-bottom-color: #3498db;
+}
+
+/* Petit bouton de duplication sur la carte */
+.btn-icon {
+  flex-shrink: 0; /* Empêche l'icône de s'écraser */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #95a5a6; /* Couleur grise plus douce */
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.btn-icon:hover {
+  color: #3498db;
+}
+
+.counter-body { display: flex; justify-content: center; align-items: center; gap: 20px; }
+
+/* Boutons + / - circulaires */
+.btn-val { 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd; 
+  background: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.btn-val:hover { background: #f0f0f0; border-color: #3498db; color: #3498db; }
+
+.counter-value { 
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3498db;
+  min-width: 60px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-val .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+/* UI HELPERS */
+/*.burger-toggle {
+  position: fixed; top: 15px; left: 15px; z-index: 1001;
+  background: #2c3e50; color: white; border: none; padding: 10px 15px;
+  border-radius: 4px; cursor: pointer; font-size: 1.2rem;
+}*/
+/* --- Style du bouton Burger --- */
+.burger-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100; /* Toujours au-dessus de tout */
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  /* Couleurs par défaut (MENU OUVERT) */
+  background: #2c3e50;
+  color: white;
+  border: none;
+}
+
+/* Couleurs quand le MENU EST FERMÉ (Inversées) */
+.burger-toggle.burger-closed {
+  background: none;
+  color: #2c3e50;
+}
+
+/* Optionnel : petit effet au survol pour le style inversé */
+.burger-toggle.burger-closed:hover {
+  background: none;
+  transform: scale(1.05);
+}
+
+.burger-toggle:not(.burger-closed):hover {
+  background: #34495e;
+}
+
+.sidebar-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 900;
+}
+
+.welcome-screen {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #95a5a6;
+  font-size: 1.2rem;
+}
+
+.burger-toggle .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+/* --- DRAG & DROP CDK --- */
+.nav-handle, .handle {
+  color: #95a5a6;
+  margin-right: 5px;
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+
+.cdk-drag-placeholder { opacity: 0.2; }
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Empêche la sélection de texte et les menus contextuels sur les boutons d'action */
+.nav-ops button, .btn-icon, .btn-val, .burger-toggle {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* S'assure que les icônes ne bloquent pas le clic du bouton parent */
+.material-symbols-outlined {
+  pointer-events: none;
+}
+
+/* Mais on réactive les pointer-events pour les poignées de drag */
+[cdkDragHandle] {
+  pointer-events: auto !important;
+}

@@ -1,0 +1,241 @@
+/* Conteneur principal */
+.app-container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.burger-wrapper {
+  position: relative;
+}
+
+.burger-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2c3e50;
+  padding: 10px;
+}
+
+/* Le menu déroulant */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dropdown-menu button, .import-label {
+  padding: 12px 20px;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  display: block;
+}
+
+.dropdown-menu button:hover, .import-label:hover {
+  background: #f8f9fa;
+  color: #3498db;
+}
+
+.import-label {
+  margin: 0;
+  border-top: 1px solid #eee;
+}
+
+/* On garde le bouton d'ajout de groupe bien visible sur la page */
+.main-actions {
+  margin-bottom: 20px;
+}
+
+.add-group-btn {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Style global pour tous les boutons d'action */
+.toolbar button, 
+.group-header button, 
+.add-counter-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Effet au survol */
+.toolbar button:hover, 
+.group-header button:hover, 
+.add-counter-btn:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Style spécifique pour le bouton d'ajout en bas de groupe */
+.add-counter-btn {
+  margin-top: 15px;
+  width: 100%; /* Il prend toute la largeur pour être facile à cliquer */
+  background: #2ecc71; /* Un petit vert sympa pour l'ajout */
+}
+
+.add-counter-btn:hover {
+  background: #27ae60;
+}
+
+/* Ajustement de l'en-tête du groupe pour l'alignement */
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Pour éviter que ça déborde sur mobile */
+}
+
+/* Les petits boutons de contrôle (+/-) restent circulaires */
+.controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #dcdde1;
+  background: white;
+  color: #2c3e50;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Liste des Groupes */
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.group-card {
+  background: #fff;
+  border: 1px solid #dcdde1;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f1f2f6;
+  padding-bottom: 10px;
+}
+
+.group-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.group-title:focus {
+  border-color: #3498db;
+  outline: none;
+  background: #f9f9f9;
+}
+
+/* Liste des Compteurs */
+.counter-list {
+  min-height: 50px; /* Important pour pouvoir redéposer dans un groupe vide */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.counter-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  border: 1px solid #e1e8ed;
+  padding: 12px 15px;
+  border-radius: 6px;
+}
+
+.counter-item input {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.controls button:hover {
+  background: #e1e8ed;
+}
+
+.value {
+  font-family: monospace;
+  font-size: 1.4rem;
+  min-width: 45px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Drag & Drop Handles */
+.handle, .handle-small {
+  cursor: move;
+  color: #bdc3c7;
+  user-select: none;
+}
+
+.handle { font-size: 1.5rem; }
