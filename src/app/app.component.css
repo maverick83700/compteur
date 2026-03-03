@@ -137,6 +137,16 @@
 }
 
 /* --- ZONE PRINCIPALE (CONTENU) --- */
+header {
+  /* On ajoute un padding en haut égal à la hauteur de la barre de statut */
+  padding-top: env(safe-area-inset-top, 20px);
+  
+  /* On garde tes autres styles... */
+  height: calc(60px + env(safe-area-inset-top, 0px)); 
+  display: flex;
+  align-items: center;
+}
+
 .main-content { flex: 1; padding: 40px; background: #f4f7f6; overflow-y: auto; overflow-x: hidden; padding-top: 50px;}
 
 .content-header {
