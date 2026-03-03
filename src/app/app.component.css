@@ -1,3 +1,7 @@
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
 /* --- STRUCTURE GLOBALE --- */
 .app-layout {
   display: flex;
@@ -11,6 +15,7 @@
 /* Sidebar - Etat fermé par défaut */
 .side-panel {
   position: fixed;
+  padding-top: var(--safe-top); /* Ajout de cette ligne */
   left: 0;
   top: 0;
   bottom: 0;
@@ -60,7 +65,8 @@
 
   .main-content {
     padding: 20px;
-    padding-top: 75px; /* Laisse de la place pour le burger flottant */
+    /*padding-top: 75px; /* Laisse de la place pour le burger flottant */
+    padding-top: calc(75px + var(--safe-top));
   }
   
   .editable-title {
@@ -137,16 +143,6 @@
 }
 
 /* --- ZONE PRINCIPALE (CONTENU) --- */
-header {
-  /* On ajoute un padding en haut égal à la hauteur de la barre de statut */
-  padding-top: env(safe-area-inset-top, 20px);
-  
-  /* On garde tes autres styles... */
-  height: calc(60px + env(safe-area-inset-top, 0px)); 
-  display: flex;
-  align-items: center;
-}
-
 .main-content { flex: 1; padding: 40px; background: #f4f7f6; overflow-y: auto; overflow-x: hidden; padding-top: 50px;}
 
 .content-header {
@@ -318,7 +314,8 @@ header {
 /* --- Style du bouton Burger --- */
 .burger-toggle {
   position: fixed;
-  top: 15px;
+  /*top: 15px;*/
+  top: calc(15px + var(--safe-top));
   left: 15px;
   z-index: 1100; /* Toujours au-dessus de tout */
   width: 45px;
