@@ -1,5 +1,5 @@
 :root {
-  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-top: env(safe-area-inset-top, 75px);
 }
 
 /* --- STRUCTURE GLOBALE --- */
