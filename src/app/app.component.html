@@ -52,13 +52,11 @@
   <main class="main-content">
     @if (selectedGroup(); as group) {
       <div class="content-header">
-        <div class="content-header">
-          <input [(ngModel)]="group.name" class="editable-title" placeholder="Nom du groupe">
+          <input [(ngModel)]="group.name" (change)="counterService.updateAndSave()" class="editable-title" placeholder="Nom du groupe">
           
           <button class="btn-add-icon" (click)="counterService.addCounter(group.id)" title="Ajouter un compteur">
             <span class="material-symbols-outlined">add</span>
           </button>
-        </div>
       </div>
 
       <div class="counter-grid" cdkDropList (cdkDropListDropped)="dropCounter($event, group)">
@@ -66,18 +64,18 @@
           <div class="counter-card" cdkDrag>
             <div class="counter-top">
               <span class="material-symbols-outlined handle" cdkDragHandle>drag_indicator</span>
-              <input [(ngModel)]="counter.title">
+              <input [(ngModel)]="counter.title" (change)="counterService.updateAndSave()">
               <button type="button" class="btn-icon" (click)="onDuplicateCounter($event, group.id, counter)">
                 <span class="material-symbols-outlined">content_copy</span>
               </button>
             </div>
             
             <div class="counter-body">
-              <button (click)="counter.value = counter.value - 1" class="btn-val">
+              <button (click)="counter.value = counter.value - 1; counterService.updateAndSave()" class="btn-val">
                 <span class="material-symbols-outlined">remove</span>
               </button>
               <span class="counter-value">{{ counter.value }}</span>
-              <button (click)="counter.value = counter.value + 1" class="btn-val">
+              <button (click)="counter.value = counter.value + 1; counterService.updateAndSave()" class="btn-val">
                 <span class="material-symbols-outlined">add</span>
               </button>
             </div>

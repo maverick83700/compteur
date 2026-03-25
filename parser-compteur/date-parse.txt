@@ -1,0 +1,494 @@
+[
+  {
+    "name": "2026",
+    "counters": [
+      {
+        "title": "🎮",
+        "value": 73
+      },
+      {
+        "title": "🎬",
+        "value": 9
+      },
+      {
+        "title": "🍺",
+        "value": 5
+      },
+      {
+        "title": "🏋️",
+        "value": 2
+      },
+      {
+        "title": "💩",
+        "value": 71
+      },
+      {
+        "title": "🍆✊",
+        "value": 0
+      },
+      {
+        "title": "🍑👅",
+        "value": 9
+      },
+      {
+        "title": "🍆👅",
+        "value": 3
+      },
+      {
+        "title": "🍻🍹🍷🥃",
+        "value": 1
+      },
+      {
+        "title": "🍑👈",
+        "value": 1
+      },
+      {
+        "title": "🍆💦",
+        "value": 12
+      },
+      {
+        "title": "🍑🍆",
+        "value": 8
+      },
+      {
+        "title": "🍑🍆👈👅💦",
+        "value": 12
+      },
+      {
+        "title": "🍑💦",
+        "value": 41
+      },
+      {
+        "title": "💦",
+        "value": 34
+      },
+      {
+        "title": "🍫🍆",
+        "value": 2
+      },
+      {
+        "title": "🍫🍆👦",
+        "value": 1
+      },
+      {
+        "title": "🪵🔥",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "name": "2025",
+    "counters": [
+      {
+        "title": "🍑💦",
+        "value": 353
+      },
+      {
+        "title": "🍑🍆👅👈💦",
+        "value": 158
+      },
+      {
+        "title": "🍑🍆",
+        "value": 97
+      },
+      {
+        "title": "🍆💦",
+        "value": 119
+      },
+      {
+        "title": "🍑👈",
+        "value": 12
+      },
+      {
+        "title": "🪵🔥",
+        "value": 30
+      },
+      {
+        "title": "🍫🍆👦",
+        "value": 2
+      },
+      {
+        "title": "🍫🍆",
+        "value": 14
+      },
+      {
+        "title": "💦",
+        "value": 210
+      },
+      {
+        "title": "🍺",
+        "value": 53
+      },
+      {
+        "title": "🏋️",
+        "value": 60
+      },
+      {
+        "title": "💩",
+        "value": 623
+      },
+      {
+        "title": "🍆✊",
+        "value": 5
+      },
+      {
+        "title": "🍑👅",
+        "value": 87
+      },
+      {
+        "title": "🍆👅",
+        "value": 29
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 14
+      },
+      {
+        "title": "🎮",
+        "value": 386
+      },
+      {
+        "title": "🎬",
+        "value": 46
+      }
+    ]
+  },
+  {
+    "name": "2024",
+    "counters": [
+      {
+        "title": "🎬",
+        "value": 32
+      },
+      {
+        "title": "🍺",
+        "value": 88
+      },
+      {
+        "title": "🍑🍆",
+        "value": 108
+      },
+      {
+        "title": "🏋️",
+        "value": 49
+      },
+      {
+        "title": "💦",
+        "value": 196
+      },
+      {
+        "title": "💩",
+        "value": 603
+      },
+      {
+        "title": "🍆👅",
+        "value": 37
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 25
+      },
+      {
+        "title": "🎮",
+        "value": 245
+      },
+      {
+        "title": "🍆✊",
+        "value": 9
+      },
+      {
+        "title": "🍑👅",
+        "value": 64
+      },
+      {
+        "title": "🍆💦",
+        "value": 150
+      },
+      {
+        "title": "🍑👈",
+        "value": 12
+      },
+      {
+        "title": "🍑🍆👅👈💦",
+        "value": 183
+      },
+      {
+        "title": "🍑💦",
+        "value": 365
+      },
+      {
+        "title": "🪵🔥",
+        "value": 33
+      },
+      {
+        "title": "🍫🍆",
+        "value": 17
+      }
+    ]
+  },
+  {
+    "name": "2023",
+    "counters": [
+      {
+        "title": "🎮",
+        "value": 355
+      },
+      {
+        "title": "🎬",
+        "value": 48
+      },
+      {
+        "title": "🍺",
+        "value": 69
+      },
+      {
+        "title": "🍑🍆",
+        "value": 147
+      },
+      {
+        "title": "🏋️",
+        "value": 83
+      },
+      {
+        "title": "💦",
+        "value": 163
+      },
+      {
+        "title": "💩",
+        "value": 578
+      },
+      {
+        "title": "🍆👅",
+        "value": 53
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 18
+      },
+      {
+        "title": "🍑👅",
+        "value": 54
+      },
+      {
+        "title": "🍆✊",
+        "value": 14
+      },
+      {
+        "title": "🍑👈",
+        "value": 15
+      },
+      {
+        "title": "🍆💦",
+        "value": 206
+      },
+      {
+        "title": "🍑💦",
+        "value": 411
+      },
+      {
+        "title": "🍑🍆👅👈💦",
+        "value": 220
+      },
+      {
+        "title": "🍫🍆",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "name": "2022",
+    "counters": [
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 21
+      },
+      {
+        "title": "🎮",
+        "value": 416
+      },
+      {
+        "title": "🎬",
+        "value": 34
+      },
+      {
+        "title": "🍺",
+        "value": 88
+      },
+      {
+        "title": "🍑🍆",
+        "value": 245
+      },
+      {
+        "title": "🏋️",
+        "value": 61
+      },
+      {
+        "title": "💦",
+        "value": 123
+      },
+      {
+        "title": "💩",
+        "value": 637
+      },
+      {
+        "title": "🍆👅",
+        "value": 85
+      },
+      {
+        "title": "🍑👅",
+        "value": 111
+      },
+      {
+        "title": "🍆✊",
+        "value": 9
+      },
+      {
+        "title": "🍑👈",
+        "value": 34
+      },
+      {
+        "title": "🍆💦",
+        "value": 347
+      },
+      {
+        "title": "🍑💦",
+        "value": 735
+      },
+      {
+        "title": "🍑🍆👅👈💦",
+        "value": 364
+      },
+      {
+        "title": "🍫🍆",
+        "value": 21
+      }
+    ]
+  },
+  {
+    "name": "2021",
+    "counters": [
+      {
+        "title": "💩",
+        "value": 581
+      },
+      {
+        "title": "🍆👅",
+        "value": 107
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 32
+      },
+      {
+        "title": "🎮",
+        "value": 282
+      },
+      {
+        "title": "🎬",
+        "value": 51
+      },
+      {
+        "title": "🍺",
+        "value": 86
+      },
+      {
+        "title": "🍑🍆",
+        "value": 316
+      },
+      {
+        "title": "🏋️",
+        "value": 5
+      },
+      {
+        "title": "💦",
+        "value": 99
+      },
+      {
+        "title": "🍑👅",
+        "value": 108
+      }
+    ]
+  },
+  {
+    "name": "2020",
+    "counters": [
+      {
+        "title": "🍑👅",
+        "value": 41
+      },
+      {
+        "title": "🍆👅",
+        "value": 44
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 20
+      },
+      {
+        "title": "🎮",
+        "value": 435
+      },
+      {
+        "title": "🎬",
+        "value": 46
+      },
+      {
+        "title": "🍺",
+        "value": 90
+      },
+      {
+        "title": "🍑🍆",
+        "value": 215
+      },
+      {
+        "title": "🏋️",
+        "value": 65
+      },
+      {
+        "title": "💦",
+        "value": 190
+      },
+      {
+        "title": "💩",
+        "value": 529
+      }
+    ]
+  },
+  {
+    "name": "2019",
+    "counters": [
+      {
+        "title": "🍑🍆",
+        "value": 43
+      },
+      {
+        "title": "🏋️",
+        "value": 76
+      },
+      {
+        "title": "💦",
+        "value": 318
+      },
+      {
+        "title": "💩",
+        "value": 549
+      },
+      {
+        "title": "🍻🍷🍸🥃",
+        "value": 30
+      },
+      {
+        "title": "🎮",
+        "value": 222
+      },
+      {
+        "title": "🎬",
+        "value": 76
+      },
+      {
+        "title": "🍺",
+        "value": 221
+      }
+    ]
+  }
+]

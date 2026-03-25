@@ -27,6 +27,12 @@ export class CounterService {
     }
   }
 
+  // Sauvegarde depuis le HTML après une modification (ex: changement de titre)
+  //permet de rajouter un comportement spécifique à la sauvegarde (ex: debounce, validation, etc.) si besoin
+  updateAndSave() {
+    this.saveToDevice();
+  }
+
   // CHARGEMENT PHYSIQUE
   async loadData() {
     try {

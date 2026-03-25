@@ -1,9 +1,10 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, OnInit, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule, CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { CounterService } from './services/counter.service';
 import { Counter, CounterGroup } from './models/counter.model';
+import { StatusBar, Style } from '@capacitor/status-bar'; // Import du plugin
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,24 @@ export class AppComponent {
   selectedGroup = computed(() => 
     this.groups().find(g => g.id === this.selectedGroupId()) || null
   );
+
+  async ngOnInit() {
+    try {
+     // On s'assure que la barre est visible (ça force le décalage)
+    await StatusBar.show();
+    
+    // On désactive l'overlay (l'app doit descendre)
+    await StatusBar.setOverlaysWebView({ overlay: false });
+
+    // On change le style pour que l'heure soit blanche (sur fond sombre)
+    await StatusBar.setStyle({ style: Style.Light });
+    
+    // On met une couleur bien visible (ex: Orange) pour vérifier si ça change
+    await StatusBar.setBackgroundColor({ color: '#e67e22' });
+    } catch (e) {
+      console.log('Pas sur mobile, StatusBar ignoré');
+    }
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
